@@ -56,27 +56,16 @@ int main(int argc, char* argv[]){
         return 1;
     }
 
-    if (vm.count("npos"))
         thread_number=vm["npos"].as<int>();
-    else {
-        /*THIS CASE IS IMPOSSIBLE!!!*/
-        abort();
-    }
 
-    if (vm.count("rsa")){
-        std::ifstream ifs("./data/"+std::to_string(vm["rsa"].as<int>())+".rsa");
-        if(!ifs){
-            std::cout<<"Can't find the corresponding RSA number!\n";
-            ifs.close();
-            abort();
-        }
-        ifs>>rsa_number;
+    std::ifstream ifs("./data/"+std::to_string(vm["rsa"].as<int>())+".rsa");
+    if(!ifs){
+        std::cout<<"Can't find the corresponding RSA number!\n";
         ifs.close();
-    }
-    else {
-        std::cout << "Please set the RSA number.\n";
         abort();
     }
+    ifs>>rsa_number;
+    ifs.close();
 
     auto task_function=std::bind(task_function_impl,rsa_number,sqrt(rsa_number)/2);
 
