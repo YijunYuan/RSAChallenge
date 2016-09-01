@@ -68,11 +68,11 @@ int main(int argc, char* argv[]){
     ifs>>rsa_number;
     ifs.close();
 
-    auto task_function=std::bind(task_function_impl,rsa_number,sqrt(rsa_number)/2);
-
+    //auto task_function=std::bind(task_function_impl,rsa_number,sqrt(rsa_number)/2);
+    mpz_int dist_upper_bound=sqrt(rsa_number)/2;
     std::vector<std::thread> task_group;
     for(int i=0;i<thread_number;i++)
-        task_group.push_back(std::thread(task_function));
+        task_group.emplace_back(task_function_impl,rsa_number,dist_upper_bound);
 
     for(auto itr=task_group.begin();itr!=task_group.end();itr++)
         itr->join();
