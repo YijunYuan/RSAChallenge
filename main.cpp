@@ -30,6 +30,7 @@ void task_function_impl(const boost::multiprecision::mpz_int& rsa_number, const 
     }
 }
 
+
 int main(int argc, char* argv[]){
     using namespace boost::multiprecision;
     using namespace boost::random;
