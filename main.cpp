@@ -24,7 +24,7 @@ void task_function_impl(const boost::multiprecision::mpz_int& rsa_number, const 
             std::cout << factor << std::endl;
             ofs<<factor;
             ofs.close();
-            break;
+            abort();
         }
 
     }
