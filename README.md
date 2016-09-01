@@ -12,7 +12,7 @@ You must use `--rsa=xxx` or `-r xxx`to tell the program that which RSA number is
 If you want to turn on the multi-thread support, you can use `--npos=xxx`. For example, `RSAChallenge --rsa=230 --npos=5` means to test RSA-230 with 5 computing threads. This option has a default value 1.
 
 ##Dependencies
-- ** boost::random**
+- **boost::random**
 - **boost::program_options**
 - **boost::multiprecison**
 - **gmp**
