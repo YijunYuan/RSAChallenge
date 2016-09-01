@@ -58,6 +58,7 @@ int main(int argc, char* argv[]){
 
         thread_number=vm["npos"].as<int>();
 
+    
     std::ifstream ifs("./data/"+std::to_string(vm["rsa"].as<int>())+".rsa");
     if(!ifs){
         std::cout<<"Can't find the corresponding RSA number!\n";
