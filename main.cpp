@@ -30,7 +30,6 @@ void task_function_impl(const boost::multiprecision::mpz_int& rsa_number, const 
     }
 }
 
-
 int main(int argc, char* argv[]){
     using namespace boost::multiprecision;
     using namespace boost::random;
@@ -58,7 +57,7 @@ int main(int argc, char* argv[]){
 
         thread_number=vm["npos"].as<int>();
 
-    
+
     std::ifstream ifs("./data/"+std::to_string(vm["rsa"].as<int>())+".rsa");
     if(!ifs){
         std::cout<<"Can't find the corresponding RSA number!\n";
